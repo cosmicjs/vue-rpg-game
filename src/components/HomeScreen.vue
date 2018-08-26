@@ -6,11 +6,11 @@
     </div>
 
     <div class="homeScreenOptions">
-      <div class="homeScreenOption">
+      <div class="homeScreenOption" v-on:click="changeView('playGame')">
           Play Game
       </div>
 
-      <div class="homeScreenOption">
+      <div class="homeScreenOption" v-on:click="changeView('howToPlay')">
           How To Play
       </div>
     </div>
@@ -40,6 +40,11 @@ const api = Cosmic()
       }
     },
     methods: {
+      changeView(view) {
+        console.log('clicked')
+        this.$store.commit('changeView', view)
+        console.log(this.$store.state.currentView)
+      },
       async getResObject() {
         const slug = 'home'
         try {
@@ -96,7 +101,7 @@ const api = Cosmic()
   .homeScreenOptions {
     margin: 45px auto 0 auto;
     width: 30%;
-
+    cursor: pointer;
   }
 
   .homeScreenOption {

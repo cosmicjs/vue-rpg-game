@@ -8,10 +8,12 @@ const store = new Vuex.Store({
     currentViewOptions: ['homeScreen', 'howToPlay', 'playGame']
   },
   getters: {
-    
+
   },
   mutations: {
-
+    changeView(state, view) {
+      return state.currentView = view
+    }
   }
 })
 

@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <HomeScreen v-show="currentView == 'homeScreen'"/>
+    <div class="test" v-show="currentView == 'playGame'">
+
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import HomeScreen from './components/HomeScreen'
 import bucket from '../config/config.js'
 
 export default {
 
   name: 'App',
   components: {
-    HelloWorld
+    HomeScreen
+  },
+  computed: {
+    currentView() {
+      return this.$store.state.currentView
+    }
+  },
+  methods: {
+
   }
 }
 </script>
