@@ -2,7 +2,7 @@
   <div class="homeScreen" :style="`background-image:url(${(homeScreenImage)});`">
     <div class="homeScreenTitle">
       <!-- <img :src="`${homeScreenTitleImage}`"> -->
-      <img src="../assets/homeScreenTitleImage.png" >
+      <img src="../../assets/homeScreenTitleImage.png" >
     </div>
 
     <div class="homeScreenOptions">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import bucket from '../../config/config.js'
+import bucket from '../../../config/config.js'
 const Cosmic = require('cosmicjs')
 const api = Cosmic()
   export default {

@@ -1,21 +1,24 @@
 <template>
   <div id="app">
     <HomeScreen v-show="currentView == 'homeScreen'"/>
-    <div class="test" v-show="currentView == 'playGame'">
+    <EnemySelectionScreen v-show="currentView == 'enemySelectionScreen'"/>
+    <PlayGame v-show="currentView == 'playGame'"/>
 
     </div>
   </div>
 </template>
 
 <script>
-import HomeScreen from './components/HomeScreen'
+import HomeScreen from './components/screens/HomeScreen'
+import PlayGame from './components/screens/PlayGame'
 import bucket from '../config/config.js'
 
 export default {
 
   name: 'App',
   components: {
-    HomeScreen
+    HomeScreen,
+    PlayGame
   },
   computed: {
     currentView() {
