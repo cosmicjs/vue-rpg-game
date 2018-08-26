@@ -1,5 +1,19 @@
 <template>
-  <div>
+  <div class="homeScreen" :style="`background-image:url(${(homeScreenImage)});`">
+    <div class="homeScreenTitle">
+      <!-- <img :src="`${homeScreenTitleImage}`"> -->
+      <img src="../assets/homeScreenTitleImage.png" >
+    </div>
+
+    <div class="homeScreenOptions">
+      <div class="homeScreenOption">
+          Play Game
+      </div>
+
+      <div class="homeScreenOption">
+          How To Play {{abey}}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,7 +34,11 @@ const api = Cosmic()
     mounted() {
       this.getResObject()
     },
-    computed: {},
+    computed: {
+      abey() {
+        return this.$store.state.abey
+      }
+    },
     methods: {
       async getResObject() {
         const slug = 'home'
@@ -62,5 +80,32 @@ const api = Cosmic()
 </script>
 
 <style scoped>
+  .homeScreen {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+    overflow:hidden;
+    text-align: center;
+  }
 
+  .homeScreenTitle {
+    margin-top: 75px;
+  }
+
+  .homeScreenOptions {
+    margin: 45px auto 0 auto;
+    width: 30%;
+
+  }
+
+  .homeScreenOption {
+    border: 2px solid #92ced6;
+    color: #92ced6;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 25px;
+  }
 </style>
