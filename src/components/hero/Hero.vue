@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="heroTile">
     <div class="heroHealthBarOuter">
-      <div class="heroHealthBarInner" v-bind:style="calculateHealthBar">
+      <div class="heroHealthBarInner" v-bind:style="calculateHealthBar"></div>
+    </div>
 
-      </div>
+    <div class="heroLevel">
+      Level: {{ heroLevel }}
     </div>
     <div class="heroImage">
       <!-- //TODO: rewire this, make it hooked to cosmicjs. -->
@@ -33,6 +35,9 @@
       maxHealth() {
         return this.$store.state.currentHeroMaxHealth
       },
+      heroLevel() {
+        return this.$store.state.currentHeroLevel
+      },
       calculateHealthBar() {
         let color
         if (this.currentHeroState == "Idle") color = 'red'
@@ -52,6 +57,10 @@
 </script>
 
 <style scoped>
+  .heroTile {
+    width: 105px;
+  }
+
   .heroHealthBarOuter {
     border: 1px solid black;
     height: 10px;
@@ -61,6 +70,11 @@
   .heroHealthBarInner {
     height: 100%;
     background: red;
+  }
+
+  .heroLevel {
+    margin-top: 5px;
+    
   }
 
   .heroImage img {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HomeScreen v-show="currentView == 'homeScreen'"/>
-    <EnemySelectionScreen v-show="currentView == 'enemySelectionScreen'"/>
+    <StoryIntro v-show="currentView == 'storyIntro'"/>
     <PlayGame v-show="currentView == 'playGame'"/>
 
     </div>
@@ -10,6 +10,7 @@
 
 <script>
 import HomeScreen from './components/screens/HomeScreen'
+import StoryIntro from './components/screens/StoryIntro'
 import PlayGame from './components/screens/PlayGame'
 import bucket from '../config/config.js'
 
@@ -18,6 +19,7 @@ export default {
   name: 'App',
   components: {
     HomeScreen,
+    StoryIntro,
     PlayGame
   },
   computed: {

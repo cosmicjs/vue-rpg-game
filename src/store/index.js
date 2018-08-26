@@ -5,11 +5,13 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     currentView: 'homeScreen',
-    currentViewOptions: ['homeScreen', 'howToPlay', 'playGame', 'enemySelectionScreen'],
+    currentViewOptions: ['homeScreen', 'howToPlay', 'storyIntro',
+                         'enemySelectionScreen', 'playGame'],
 
     // Hero Stats
     currentHeroHealth: 90,
     currentHeroMaxHealth: 100,
+    currentHeroLevel: 1,
     currentHeroState: 'Idle',
     currentHeroStateOptions: ['idle', 'attacking1', 'attacking2', 'poisoned', 'slain'],
     heroImages: {

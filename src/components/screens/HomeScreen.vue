@@ -6,7 +6,7 @@
     </div>
 
     <div class="homeScreenOptions">
-      <div class="homeScreenOption" v-on:click="changeView('playGame')">
+      <div class="homeScreenOption" v-on:click="changeView('storyIntro')">
           Play Game
       </div>
 
@@ -41,9 +41,7 @@ const api = Cosmic()
     },
     methods: {
       changeView(view) {
-        console.log('clicked')
         this.$store.commit('changeView', view)
-        console.log(this.$store.state.currentView)
       },
       async getResObject() {
         const slug = 'home'
