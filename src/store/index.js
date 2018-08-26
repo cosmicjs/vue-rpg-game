@@ -4,10 +4,11 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    abey: '5'
+    currentView: 'homeScreen',
+    currentViewOptions: ['homeScreen', 'howToPlay', 'playGame']
   },
   getters: {
-
+    
   },
   mutations: {
 

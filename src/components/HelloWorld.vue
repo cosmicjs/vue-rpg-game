@@ -11,7 +11,7 @@
       </div>
 
       <div class="homeScreenOption">
-          How To Play {{abey}}
+          How To Play
       </div>
     </div>
   </div>
