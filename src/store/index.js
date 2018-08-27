@@ -9,14 +9,19 @@ const store = new Vuex.Store({
                          'enemySelectionScreen', 'playGame'],
 
     // Hero Stats
-    currentHeroHealth: 90,
+    currentHeroHealth: 100,
     currentHeroMaxHealth: 100,
     currentHeroLevel: 1,
+    currentHeroExperience: 0,
+    experienceToNextLevel: 50,
     currentHeroState: 'Idle',
     currentHeroStateOptions: ['idle', 'attacking1', 'attacking2', 'poisoned', 'slain'],
     heroImages: {
       'Idle': '~/src/assets/HeroIdle.gif'
-    }
+    },
+
+    // Enemy Stats
+    currentEnemy: {},
   },
   getters: {
 
@@ -24,6 +29,19 @@ const store = new Vuex.Store({
   mutations: {
     changeView(state, view) {
       return state.currentView = view
+    },
+    initializeEnemy(state, enemy) {
+      state.currentEnemy = enemy
+    },
+    damageEnemy(state, damage) {
+      return state.currentEnemy.health = state.currentEnemy.health - damage
+    },
+    grantExperience(state, exp) {
+      state.experienceToNextLevel = state.experienceToNextLevel - exp
+      if (state.experienceToNextLevel <= 0) {
+        state.currentHeroLevel += 1
+        state.experienceToNextLevel = (state.currentHeroLevel * 50)
+      }
     }
   }
 })

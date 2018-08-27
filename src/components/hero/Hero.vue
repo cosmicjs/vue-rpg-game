@@ -11,6 +11,10 @@
       <!-- //TODO: rewire this, make it hooked to cosmicjs. -->
       <img v-if="currentHeroState == 'Idle'" src="../../assets/hero/HeroIdle.gif">
     </div>
+
+    <div class="heroActions">
+      <button type="button" v-on:click="heroAttack()"> Attack </button>
+    </div>
   </div>
 </template>
 
@@ -49,7 +53,10 @@
       }
     },
     methods: {
-
+      heroAttack() {
+        this.$store.commit('damageEnemy', 10)
+        console.log(this.$store.state.currentEnemy)
+      }
     },
     watch: {}
   }
@@ -74,7 +81,7 @@
 
   .heroLevel {
     margin-top: 5px;
-    
+    margin-bottom: -20px;
   }
 
   .heroImage img {

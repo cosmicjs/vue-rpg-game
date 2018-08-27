@@ -63,7 +63,6 @@ const api = Cosmic()
               this.homeScreenTitleImage = field.url
             }
           })
-          console.log(this.homeScreenTitle)
           //
           // const bucket = api.bucket({
           //   slug: 'cosmic-game',

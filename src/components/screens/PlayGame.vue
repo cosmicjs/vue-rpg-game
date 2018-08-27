@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="playGameScreen">
     <!-- <img src="../../assets/hero/HeroIdle.gif"> -->
     <!-- <img src="~/src/assets/hero/HeroIdle.gif" alt=""> -->
-    <Hero />
-    <Enemy />
+    <Hero class="tile"/>
+    <Enemy class="tile"/>
   </div>
 </template>
 
@@ -26,5 +26,12 @@
 </script>
 
 <style scoped>
+  .playGameScreen {
 
+  }
+  
+  /* .tile {
+    display: inline-block;
+    margin: 5px;
+  } */
 </style>
