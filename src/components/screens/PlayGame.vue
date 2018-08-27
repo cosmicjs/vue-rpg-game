@@ -1,9 +1,9 @@
 <template>
   <div class="playGameScreen">
-    <!-- <img src="../../assets/hero/HeroIdle.gif"> -->
-    <!-- <img src="~/src/assets/hero/HeroIdle.gif" alt=""> -->
-    <Hero class="tile"/>
-    <Enemy class="tile"/>
+    <div class="tiles">
+      <Hero class="heroTile tile"/>
+      <Enemy class="enemyTile tile"/>
+    </div>
   </div>
 </template>
 
@@ -27,11 +27,28 @@
 
 <style scoped>
   .playGameScreen {
-
+    background-image: url('../../assets/screens/PlayGameBG.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
   }
-  
-  /* .tile {
+
+  .tiles {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+  }
+
+  .tile {
     display: inline-block;
     margin: 5px;
-  } */
+  }
+
+  .heroTile {
+    float: left;
+  }
+
+  .enemyTile {
+    float: right;
+  }
 </style>

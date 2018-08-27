@@ -73,6 +73,7 @@
 <style scoped>
   .enemyTile {
     width: 105px;
+    color: white;
   }
 
   .enemyHealthBarOuter {

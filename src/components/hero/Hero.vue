@@ -55,10 +55,17 @@
     methods: {
       heroAttack() {
         this.$store.commit('damageEnemy', 10)
-        console.log(this.$store.state.currentEnemy)
+        this.$store.commit('damageHero')
       }
     },
-    watch: {}
+    watch: {
+      currentHeroState() {
+        if (this.currentHeroState == 'Dead') {
+          //TODO: Fix this!
+          console.log('Game Over')
+        }
+      }
+    }
   }
 
 </script>
@@ -66,6 +73,7 @@
 <style scoped>
   .heroTile {
     width: 105px;
+    color: white;
   }
 
   .heroHealthBarOuter {

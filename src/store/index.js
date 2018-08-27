@@ -36,6 +36,15 @@ const store = new Vuex.Store({
     damageEnemy(state, damage) {
       return state.currentEnemy.health = state.currentEnemy.health - damage
     },
+    damageHero(state) {
+      state.currentHeroHealth = state.currentHeroHealth - state.currentEnemy.damage
+      if (state.currentHeroHealth <= 0) {
+        state.currentHeroState = 'Dead'
+      }
+    },
+    updateHeroStatus(state, status) {
+      state.currentHeroState = status
+    },
     grantExperience(state, exp) {
       state.experienceToNextLevel = state.experienceToNextLevel - exp
       if (state.experienceToNextLevel <= 0) {
