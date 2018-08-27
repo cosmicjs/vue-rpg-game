@@ -50,10 +50,9 @@
     },
     methods: {
       enemyKilled() {
-        console.log(this.currentEnemyNames.length, this.currentEnemyNames)
         if (this.currentEnemyNames.length == 1) {
           this.$store.commit('changeView', 'victoryScreen')
-          return 
+          return
         }
         this.$store.commit('grantExperience', this.currentEnemy.experience)
         this.$store.commit('changeView', 'enemyDefeated')

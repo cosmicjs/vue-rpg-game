@@ -2,7 +2,7 @@
   <div>
     GAME OVER.
 
-    <button type="button" v-on:click="changeView('homeScreen')">Return To Home Screen</button>
+    <button type="button" v-on:click="reload()">Return To Home Screen</button>
   </div>
 </template>
 
@@ -15,8 +15,8 @@
     mounted() {},
     computed: {},
     methods: {
-      changeView(view) {
-        this.$store.commit('changeView', view)
+      reload() {
+        window.location.reload(true);
       },
     },
     watch: {}

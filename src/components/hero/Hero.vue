@@ -48,7 +48,7 @@
         return this.heroLevel * 10
       },
       heroHealPower() {
-        return this.heroLevel * 20
+        return this.heroLevel * 10
       },
       calculateHealthBar() {
         let color
@@ -65,10 +65,12 @@
         this.$store.commit('damageEnemy', this.heroAttackPower)
         this.$store.commit('updateHeroStatus', 'Attacking')
         this.$store.commit('damageHero')
+        this.$store.commit('updateCurrentActionMessages', 'attack')
       },
       heroHeal() {
         this.$store.commit('healHero', this.heroHealPower)
         this.$store.commit('damageHero')
+        this.$store.commit('updateCurrentActionMessages', 'Heal')
       }
     },
     watch: {

@@ -1,5 +1,16 @@
 <template>
   <div class="playGameScreen">
+    <div class="actionMessages">
+
+      <div class="actionMessage">
+        {{ firstMessage }}
+      </div>
+
+      <div class="actionMessage">
+        {{ secondMessage }}
+      </div>
+
+    </div>
     <div class="tiles">
       <Hero class="heroTile tile"/>
       <Enemy class="enemyTile tile"/>
@@ -12,15 +23,25 @@
   import Enemy from '../enemy/Enemy.vue'
   export default {
     props: [],
-    data() { return {} },
+    data() {
+      return {}
+    },
     components: {
       Hero,
       Enemy
     },
     mounted() {},
-    computed: {},
+    computed: {
+      firstMessage() {
+        return this.$store.state.currentActionMessagesFirst
+      },
+      secondMessage() {
+        return this.$store.state.currentActionMessagesSecond
+      },
+    },
     methods: {},
-    watch: {}
+    watch: {
+    }
   }
 
 </script>
@@ -50,5 +71,9 @@
 
   .enemyTile {
     float: right;
+  }
+
+  .actionMessages {
+    padding-top: 25px;
   }
 </style>

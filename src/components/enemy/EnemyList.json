@@ -1,7 +1,7 @@
 {
   "Raptar": {
-    "name": "Raptar",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=5863f184-ce00-4a0d-b3d2-01d3d222f9ee",
+    "name": "Space Grunt",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cosmic-assets.appspot.com/o/spaceSlime.gif?alt=media&token=f07af296-505e-4bcd-9659-191d8bc9215e",
     "max_health": "50",
     "health": 50,
     "damage": 15,
@@ -9,8 +9,8 @@
     "experience": 50
   },
   "Tortle": {
-    "name": "Tortle",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/sprite%20front%20STICKER-source.gif?alt=media&token=a4e6e9e5-5503-4dd9-aa09-e40736b7d41c",
+    "name": "Space Pirate",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cosmic-assets.appspot.com/o/spaceSlime2.gif?alt=media&token=0f8d08cd-4587-4ba1-ad0d-271459a4e9bf",
     "max_health": "100",
     "health": 100,
     "damage": 25,
@@ -18,17 +18,17 @@
     "experience": 100
   },
   "Venus": {
-    "name": "Venus",
+    "name": "Space Pirate Captain",
     "max_health": "120",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/monster2.gif?alt=media&token=4404048e-d4a6-43ed-90c1-78e2b0bc9a3f",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cosmic-assets.appspot.com/o/spaceSlime3.gif?alt=media&token=0e9a8188-ae95-4699-a057-5f144cf790a7",
     "health": 120,
     "damage": 35,
     "statusEffects": "",
     "experience": 100
   },
   "FINAL BOSS: Reaper": {
-    "name": "FINAL BOSS: Reaper",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/finalboss1.gif?alt=media&token=e31cd6ac-9fcb-4a11-a221-c3ca7747cbfb",
+    "name": "The Ascended One",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cosmic-assets.appspot.com/o/spacePirateKing.gif?alt=media&token=1dadc8fc-da43-43c4-b4d8-60bca941db81",
     "max_health": "100",
     "health": 100,
     "damage": 35,

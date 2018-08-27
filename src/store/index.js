@@ -7,6 +7,8 @@ const store = new Vuex.Store({
     currentView: 'homeScreen',
     currentViewOptions: ['homeScreen', 'howToPlay', 'storyIntro',
                          'enemySelectionScreen', 'playGame', 'enemyDefeated'],
+    currentActionMessagesFirst: 'Begin Fight',
+    currentActionMessagesSecond: 'Good luck!',
 
     // Hero Stats
     currentHeroHealth: 100,
@@ -30,6 +32,12 @@ const store = new Vuex.Store({
     changeView(state, view) {
       return state.currentView = view
     },
+    updateCurrentActionMessages(state, action) {
+      console.log('msg updated in state')
+      let powerAmt = state.currentHeroLevel * 10
+      state.currentActionMessagesFirst = `You ${action} for ${powerAmt}!`
+      state.currentActionMessagesSecond = `${state.currentEnemy.name} attacks for ${state.currentEnemy.damage}!`
+    },
     initializeEnemy(state, enemy) {
       state.currentEnemy = enemy
     },
@@ -38,18 +46,16 @@ const store = new Vuex.Store({
     },
     damageHero(state) {
       state.currentHeroHealth = state.currentHeroHealth - state.currentEnemy.damage
-      console.log('Ouch', state.currentEnemy.damage)
       if (state.currentHeroHealth <= 0) {
         state.currentHeroState = 'Dead'
       }
     },
     healHero(state, heal) {
-      console.log('Healing..', state.currentHeroHealth)
       state.currentHeroHealth = state.currentHeroHealth + heal
+      console.log('healed for', heal)
       if (state.currentHeroHealth > state.currentHeroMaxHealth) {
         state.currentHeroHealth = state.currentHeroMaxHealth
       }
-      console.log('Healed:', state.currentHeroHealth)
     },
     updateHeroStatus(state, status) {
       state.currentHeroState = status
