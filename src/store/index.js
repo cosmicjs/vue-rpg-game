@@ -54,7 +54,7 @@ const store = new Vuex.Store({
     updateHeroStatus(state, status) {
       state.currentHeroState = status
       if (status == 'Attacking') {
-        setInterval(function(){
+        setTimeout(function(){
           state.currentHeroState = 'Idle';
         }, 500);
       }

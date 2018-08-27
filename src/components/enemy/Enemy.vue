@@ -50,13 +50,18 @@
     },
     methods: {
       enemyKilled() {
+        console.log(this.currentEnemyNames.length, this.currentEnemyNames)
+        if (this.currentEnemyNames.length == 1) {
+          this.$store.commit('changeView', 'victoryScreen')
+          return 
+        }
         this.$store.commit('grantExperience', this.currentEnemy.experience)
         this.$store.commit('changeView', 'enemyDefeated')
         this.updateEnemy()
       },
       updateEnemy() {
         this.currentEnemyNames.shift()
-        this.$store.commit('initializeEnemy', EnemyList[this.currentEnemyNames[1]])
+        this.$store.commit('initializeEnemy', EnemyList[this.currentEnemyNames[0]])
       }
     },
     watch: {
