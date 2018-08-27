@@ -9,7 +9,8 @@
     </div>
     <div class="heroImage">
       <!-- //TODO: rewire this, make it hooked to cosmicjs. -->
-      <img v-if="currentHeroState == 'Idle'" src="../../assets/hero/HeroIdle.gif">
+      <img v-show="currentHeroState == 'Idle'" src="../../assets/hero/HeroIdle.gif">
+      <img v-show="currentHeroState == 'Attacking'" src="../../assets/hero/HeroAttack1.gif">
     </div>
 
     <div class="heroActions">
@@ -62,6 +63,7 @@
     methods: {
       heroAttack() {
         this.$store.commit('damageEnemy', this.heroAttackPower)
+        this.$store.commit('updateHeroStatus', 'Attacking')
         this.$store.commit('damageHero')
       },
       heroHeal() {
