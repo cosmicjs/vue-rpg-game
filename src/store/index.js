@@ -38,9 +38,18 @@ const store = new Vuex.Store({
     },
     damageHero(state) {
       state.currentHeroHealth = state.currentHeroHealth - state.currentEnemy.damage
+      console.log('Ouch', state.currentEnemy.damage)
       if (state.currentHeroHealth <= 0) {
         state.currentHeroState = 'Dead'
       }
+    },
+    healHero(state, heal) {
+      console.log('Healing..', state.currentHeroHealth)
+      state.currentHeroHealth = state.currentHeroHealth + heal
+      if (state.currentHeroHealth > state.currentHeroMaxHealth) {
+        state.currentHeroHealth = state.currentHeroMaxHealth
+      }
+      console.log('Healed:', state.currentHeroHealth)
     },
     updateHeroStatus(state, status) {
       state.currentHeroState = status

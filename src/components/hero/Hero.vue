@@ -14,6 +14,7 @@
 
     <div class="heroActions">
       <button type="button" v-on:click="heroAttack()"> Attack </button>
+      <button type="button" v-on:click="heroHeal()"> Heal </button>
     </div>
   </div>
 </template>
@@ -42,6 +43,12 @@
       heroLevel() {
         return this.$store.state.currentHeroLevel
       },
+      heroAttackPower() {
+        return this.heroLevel * 10
+      },
+      heroHealPower() {
+        return this.heroLevel * 20
+      },
       calculateHealthBar() {
         let color
         if (this.currentHeroState == "Idle") color = 'red'
@@ -54,7 +61,11 @@
     },
     methods: {
       heroAttack() {
-        this.$store.commit('damageEnemy', 10)
+        this.$store.commit('damageEnemy', this.heroAttackPower)
+        this.$store.commit('damageHero')
+      },
+      heroHeal() {
+        this.$store.commit('healHero', this.heroHealPower)
         this.$store.commit('damageHero')
       }
     },
