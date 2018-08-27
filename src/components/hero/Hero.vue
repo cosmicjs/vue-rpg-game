@@ -14,8 +14,8 @@
     </div>
 
     <div class="heroActions">
-      <button type="button" v-on:click="heroAttack()"> Attack </button>
-      <button type="button" v-on:click="heroHeal()"> Heal </button>
+      <button class="attackButton" type="button" v-on:click="heroAttack()"> Attack </button>
+      <button class="healButton" type="button" v-on:click="heroHeal()"> Heal </button>
     </div>
   </div>
 </template>
@@ -107,5 +107,17 @@
   .heroImage img {
     height: 100px;
     width: 100px;
+  }
+
+  .attackButton {
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+  }
+
+  .healButton {
+    background-color: green;
+    border: 1px solid green;
+    color: white;
   }
 </style>

@@ -4,7 +4,9 @@
     <StoryIntro v-show="currentView == 'storyIntro'"/>
     <PlayGame v-show="currentView == 'playGame'"/>
     <EnemyDefeated v-show="currentView == 'enemyDefeated'"/>
+
     <GameOver v-show="currentView == 'gameOver'"/>
+    <VictoryScreen v-show="currentView == 'victoryScreen'"/>
     </div>
   </div>
 </template>
@@ -15,6 +17,7 @@ import StoryIntro from './components/screens/StoryIntro'
 import PlayGame from './components/screens/PlayGame'
 import GameOver from './components/screens/GameOver'
 import EnemyDefeated from './components/screens/EnemyDefeated'
+import VictoryScreen from './components/screens/VictoryScreen'
 
 import bucket from '../config/config.js'
 
@@ -25,7 +28,8 @@ export default {
     StoryIntro,
     PlayGame,
     GameOver,
-    EnemyDefeated
+    EnemyDefeated,
+    VictoryScreen
   },
   computed: {
     currentView() {
