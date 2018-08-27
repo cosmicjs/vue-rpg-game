@@ -3,7 +3,8 @@
     <HomeScreen v-show="currentView == 'homeScreen'"/>
     <StoryIntro v-show="currentView == 'storyIntro'"/>
     <PlayGame v-show="currentView == 'playGame'"/>
-
+    <EnemyDefeated v-show="currentView == 'enemyDefeated'"/>
+    <GameOver v-show="currentView == 'gameOver'"/>
     </div>
   </div>
 </template>
@@ -12,15 +13,19 @@
 import HomeScreen from './components/screens/HomeScreen'
 import StoryIntro from './components/screens/StoryIntro'
 import PlayGame from './components/screens/PlayGame'
+import GameOver from './components/screens/GameOver'
+import EnemyDefeated from './components/screens/EnemyDefeated'
+
 import bucket from '../config/config.js'
 
 export default {
-
   name: 'App',
   components: {
     HomeScreen,
     StoryIntro,
-    PlayGame
+    PlayGame,
+    GameOver,
+    EnemyDefeated
   },
   computed: {
     currentView() {

@@ -6,7 +6,7 @@ const store = new Vuex.Store({
   state: {
     currentView: 'homeScreen',
     currentViewOptions: ['homeScreen', 'howToPlay', 'storyIntro',
-                         'enemySelectionScreen', 'playGame'],
+                         'enemySelectionScreen', 'playGame', 'enemyDefeated'],
 
     // Hero Stats
     currentHeroHealth: 100,
@@ -58,6 +58,8 @@ const store = new Vuex.Store({
       state.experienceToNextLevel = state.experienceToNextLevel - exp
       if (state.experienceToNextLevel <= 0) {
         state.currentHeroLevel += 1
+        state.currentHeroMaxHealth += 50
+        state.currentHeroHealth = state.currentHeroMaxHealth
         state.experienceToNextLevel = (state.currentHeroLevel * 50)
       }
     }

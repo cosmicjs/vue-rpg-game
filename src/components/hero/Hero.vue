@@ -72,8 +72,7 @@
     watch: {
       currentHeroState() {
         if (this.currentHeroState == 'Dead') {
-          //TODO: Fix this!
-          console.log('Game Over')
+          this.$store.commit('changeView', 'gameOver')
         }
       }
     }

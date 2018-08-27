@@ -51,11 +51,11 @@
     methods: {
       enemyKilled() {
         this.$store.commit('grantExperience', this.currentEnemy.experience)
+        this.$store.commit('changeView', 'enemyDefeated')
         this.updateEnemy()
       },
       updateEnemy() {
         this.currentEnemyNames.shift()
-        console.log(this.currentEnemyNames)
         this.$store.commit('initializeEnemy', EnemyList[this.currentEnemyNames[1]])
       }
     },
