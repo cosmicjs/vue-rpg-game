@@ -13,6 +13,7 @@
       <div class="homeScreenOption" v-on:click="changeView('howToPlay')">
           How To Play
       </div>
+      
     </div>
   </div>
 </template>

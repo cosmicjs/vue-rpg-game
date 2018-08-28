@@ -4,7 +4,7 @@
     <StoryIntro v-show="currentView == 'storyIntro'"/>
     <PlayGame v-show="currentView == 'playGame'"/>
     <EnemyDefeated v-show="currentView == 'enemyDefeated'"/>
-
+    <Tutorial v-show="currentView == 'howToPlay'"/>
     <GameOver v-show="currentView == 'gameOver'"/>
     <VictoryScreen v-show="currentView == 'victoryScreen'"/>
     </div>
@@ -15,6 +15,7 @@
 import HomeScreen from './components/screens/HomeScreen'
 import StoryIntro from './components/screens/StoryIntro'
 import PlayGame from './components/screens/PlayGame'
+import Tutorial from './components/screens/Tutorial.vue'
 import GameOver from './components/screens/GameOver'
 import EnemyDefeated from './components/screens/EnemyDefeated'
 import VictoryScreen from './components/screens/VictoryScreen'
@@ -29,7 +30,8 @@ export default {
     PlayGame,
     GameOver,
     EnemyDefeated,
-    VictoryScreen
+    VictoryScreen,
+    Tutorial
   },
   computed: {
     currentView() {
