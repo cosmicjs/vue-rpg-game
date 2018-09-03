@@ -7,7 +7,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
