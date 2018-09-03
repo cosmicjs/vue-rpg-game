@@ -27,7 +27,7 @@
 
 <style scoped>
   .victoryScreen {
-    background-image: url('../../assets/screens/VictoryBG.jpg');
+    background-image: url('https://cosmic-s3.imgix.net/60861160-af9f-11e8-98c3-51c5ac510cfb-VictoryBG.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;

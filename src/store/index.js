@@ -18,9 +18,6 @@ const store = new Vuex.Store({
     experienceToNextLevel: 50,
     currentHeroState: 'Idle',
     currentHeroStateOptions: ['idle', 'attacking1', 'attacking2', 'poisoned', 'slain'],
-    heroImages: {
-      'Idle': '~/src/assets/HeroIdle.gif'
-    },
 
     // Enemy Stats
     currentEnemy: {},
@@ -33,7 +30,6 @@ const store = new Vuex.Store({
       return state.currentView = view
     },
     updateCurrentActionMessages(state, action) {
-      console.log('msg updated in state')
       let powerAmt = state.currentHeroLevel * 10
       state.currentActionMessagesFirst = `You ${action} for ${powerAmt}!`
       state.currentActionMessagesSecond = `${state.currentEnemy.name} attacks for ${state.currentEnemy.damage}!`
@@ -52,7 +48,6 @@ const store = new Vuex.Store({
     },
     healHero(state, heal) {
       state.currentHeroHealth = state.currentHeroHealth + heal
-      console.log('healed for', heal)
       if (state.currentHeroHealth > state.currentHeroMaxHealth) {
         state.currentHeroHealth = state.currentHeroMaxHealth
       }

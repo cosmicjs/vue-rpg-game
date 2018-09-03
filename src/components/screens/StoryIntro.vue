@@ -57,7 +57,7 @@
 
 <style scoped>
   .storyIntro {
-    background-image: url('../../assets/screens/storyIntroBG.gif');
+    background-image: url('https://cosmic-s3.imgix.net/61ac68f0-af9f-11e8-a99f-65e6ba2822f8-StoryIntroBG.gif');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;

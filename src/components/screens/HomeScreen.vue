@@ -2,7 +2,7 @@
   <div class="homeScreen" :style="`background-image:url(${(homeScreenImage)});`">
     <div class="homeScreenTitle">
       <!-- <img :src="`${homeScreenTitleImage}`"> -->
-      <img src="../../assets/homeScreenTitleImage.png" >
+      <img src="https://cosmic-s3.imgix.net/7429d6c0-af9f-11e8-87c1-f3000e5917ae-homeScreenTitleImage.png" >
     </div>
 
     <div class="homeScreenOptions">
@@ -13,7 +13,7 @@
       <div class="homeScreenOption" v-on:click="changeView('howToPlay')">
           How To Play
       </div>
-      
+
     </div>
   </div>
 </template>

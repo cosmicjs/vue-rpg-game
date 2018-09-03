@@ -48,7 +48,7 @@
 
 <style scoped>
   .playGameScreen {
-    background-image: url('../../assets/screens/PlayGameBG.png');
+    background-image: url('https://cosmic-s3.imgix.net/60525730-af9f-11e8-98c3-51c5ac510cfb-PlayGameBG.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;

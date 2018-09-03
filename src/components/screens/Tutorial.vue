@@ -35,7 +35,7 @@
 
 <style scoped>
   .tutorial-screen {
-    background-image: url('../../assets/screens/TutorialBG.gif');
+    background-image: url('https://cosmic-s3.imgix.net/61779d50-af9f-11e8-98c3-51c5ac510cfb-TutorialBG.gif');
     height: 100vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;

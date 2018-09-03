@@ -9,8 +9,8 @@
     </div>
     <div class="heroImage">
       <!-- //TODO: rewire this, make it hooked to cosmicjs. -->
-      <img v-show="currentHeroState == 'Idle'" src="../../assets/hero/HeroIdle.gif">
-      <img v-show="currentHeroState == 'Attacking'" src="../../assets/hero/HeroAttack1.gif">
+      <img v-show="currentHeroState == 'Idle'" src="https://cosmic-s3.imgix.net/996373a0-afa0-11e8-a99f-65e6ba2822f8-HeroIdle.gif">
+      <img v-show="currentHeroState == 'Attacking'" src="https://cosmic-s3.imgix.net/99648510-afa0-11e8-b42b-d394ef03d4da-HeroAttack1.gif">
     </div>
 
     <div class="heroActions">
@@ -31,9 +31,6 @@
       currentHeroState() {
         return this.$store.state.currentHeroState
       },
-      currentHeroImage() {
-        return '@/assets/hero/HeroIdle.gif'
-      },
       currentHealth() {
         return this.$store.state.currentHeroHealth
 
@@ -48,7 +45,7 @@
         return this.heroLevel * 10
       },
       heroHealPower() {
-        return this.heroLevel * 10
+        return this.heroLevel * 15
       },
       calculateHealthBar() {
         let color
