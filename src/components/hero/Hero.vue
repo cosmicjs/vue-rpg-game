@@ -8,7 +8,6 @@
       Level: {{ heroLevel }}
     </div>
     <div class="heroImage">
-      <!-- //TODO: rewire this, make it hooked to cosmicjs. -->
       <img v-show="currentHeroState == 'Idle'" src="https://cosmic-s3.imgix.net/996373a0-afa0-11e8-a99f-65e6ba2822f8-HeroIdle.gif">
       <img v-show="currentHeroState == 'Attacking'" src="https://cosmic-s3.imgix.net/99648510-afa0-11e8-b42b-d394ef03d4da-HeroAttack1.gif">
     </div>
@@ -16,6 +15,9 @@
     <div class="heroActions">
       <button class="attackButton" type="button" v-on:click="heroAttack()"> Attack </button>
       <button class="healButton" type="button" v-on:click="heroHeal()"> Heal </button>
+      <button class="specialAttackButton" type="button" v-on:click="heroSpecialAttack()"
+              v-bind:class="[ cooldown != 0 ? 'opaqueButton' : '']"> Special Attack
+    </button>
     </div>
   </div>
 </template>
@@ -24,7 +26,10 @@
 
   export default {
     props: [],
-    data() { return {} },
+    data() { return {
+        cooldown: 0
+    }
+  },
     components: {},
     mounted() {
       let self = this
@@ -34,6 +39,9 @@
         }
         if (e.keyCode == 72) {
           self.heroHeal()
+        }
+        if (e.keyCode == 83) {
+          self.heroSpecialAttack()
         }
       });
     },
@@ -72,12 +80,44 @@
         this.$store.commit('damageEnemy', this.heroAttackPower)
         this.$store.commit('updateHeroStatus', 'Attacking')
         this.$store.commit('damageHero')
-        this.$store.commit('updateCurrentActionMessages', 'attack')
+        let message = {
+          action: 'attack',
+          amount: this.heroAttackPower,
+          cooldown: this.cooldown
+        }
+        this.$store.commit('updateCurrentActionMessages', message)
+        if (this.cooldown > 0) {
+          this.cooldown -= 1
+        }
       },
       heroHeal() {
         this.$store.commit('healHero', this.heroHealPower)
         this.$store.commit('damageHero')
-        this.$store.commit('updateCurrentActionMessages', 'Heal')
+        let message = {
+          action: 'heal',
+          amount: this.heroHealPower,
+          cooldown: this.cooldown
+        }
+        this.$store.commit('updateCurrentActionMessages', message)
+        if (this.cooldown > 0) {
+          this.cooldown -= 1
+        }
+      },
+      heroSpecialAttack() {
+        if (this.cooldown > 0) {
+          return
+        }
+        let specialAttackPower = this.heroAttackPower * 1.5
+        this.$store.commit('damageEnemy', specialAttackPower)
+        this.$store.commit('updateHeroStatus', 'Attacking')
+        this.$store.commit('damageHero')
+        this.cooldown = 3
+        let message = {
+          action: 'special attack',
+          amount: specialAttackPower,
+          cooldown: this.cooldown
+        }
+        this.$store.commit('updateCurrentActionMessages', message)
       }
     },
     watch: {
@@ -128,5 +168,15 @@
     background-color: green;
     border: 1px solid green;
     color: white;
+  }
+
+  .specialAttackButton {
+    background-color: #5bc0de;
+    border: 1px solid #5bc0de;
+    color: white;
+  }
+
+  .opaqueButton {
+    opacity: 0.5;
   }
 </style>

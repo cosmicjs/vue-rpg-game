@@ -8,7 +8,8 @@ const store = new Vuex.Store({
     currentViewOptions: ['homeScreen', 'howToPlay', 'storyIntro',
                          'enemySelectionScreen', 'playGame', 'enemyDefeated'],
     currentActionMessagesFirst: 'Begin Fight',
-    currentActionMessagesSecond: 'Good luck!',
+    currentActionMessagesSecond: 'A to Attack, H to Heal, S to Special Attack',
+    currentActionMessagesThird: 'Good luck!',
 
     // Hero Stats
     currentHeroHealth: 100,
@@ -29,10 +30,16 @@ const store = new Vuex.Store({
     changeView(state, view) {
       return state.currentView = view
     },
-    updateCurrentActionMessages(state, action) {
-      let powerAmt = state.currentHeroLevel * 10
-      state.currentActionMessagesFirst = `You ${action} for ${powerAmt}!`
+    updateCurrentActionMessages(state, message) {
+      state.currentActionMessagesFirst = `You ${message.action} for ${message.amount}!`
       state.currentActionMessagesSecond = `${state.currentEnemy.name} attacks for ${state.currentEnemy.damage}!`
+
+      if (message.cooldown == 0) {
+        state.currentActionMessagesThird = `Your Special Attack is ready!`
+      } else {
+        state.currentActionMessagesThird = `Your Special Attack will be ready in ${message.cooldown} turns!`
+      }
+
     },
     initializeEnemy(state, enemy) {
       state.currentEnemy = enemy

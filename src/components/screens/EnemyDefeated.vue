@@ -31,7 +31,9 @@
       let self = this
       window.addEventListener('keydown', function(e) {
         if (e.keyCode == 13) {
-          self.changeView('playGame')
+          if (this.$store.state.currentView == 'enemyDefeated') {
+            self.changeView('playGame')
+          }
         }
       });
     },

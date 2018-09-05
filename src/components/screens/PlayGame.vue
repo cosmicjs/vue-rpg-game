@@ -10,6 +10,10 @@
         {{ secondMessage }}
       </div>
 
+      <div class="actionMessage">
+        {{ thirdMessage }}
+      </div>
+
     </div>
     <div class="tiles">
       <Hero class="heroTile tile"/>
@@ -38,6 +42,9 @@
       secondMessage() {
         return this.$store.state.currentActionMessagesSecond
       },
+      thirdMessage() {
+        return this.$store.state.currentActionMessagesThird
+      }
     },
     methods: {},
     watch: {
