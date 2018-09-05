@@ -52,11 +52,7 @@ const api = Cosmic()
         }
       });
     },
-    computed: {
-      abey() {
-        return this.$store.state.abey
-      }
-    },
+    computed: {},
     methods: {
       changeView(view) {
         this.$store.commit('changeView', view)

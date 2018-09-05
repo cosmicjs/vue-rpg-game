@@ -1,23 +1,42 @@
 <template>
   <div class="victoryScreen">
-    <h1>Victory Is Yours!</h1>
-    <h2> You have avenged your family, and rid the galaxy of its most pressing
-    menace.</h2>
+    <div class="victory-screen-text" v-html="content">
+
+    </div>
     <button type="button" v-on:click="reloadGame()"> Return To Home Screen </button>
   </div>
 </template>
 
 <script>
 
+  import bucket from '../../../config/config.js'
+  const Cosmic = require('cosmicjs')
+  const api = Cosmic()
+
   export default {
     props: [],
-    data() { return {} },
+    data() {
+      return {
+        content: ''
+      }
+    },
     components: {},
-    mounted() {},
+    mounted() {
+      this.loadContent()
+    },
     computed: {},
     methods: {
       reloadGame() {
         window.location.reload(true);
+      },
+      async loadContent() {
+        const slug = 'victory'
+        try {
+          const res = await bucket.getObject({ slug })
+          this.content = res.object.content
+        } catch(e) {
+          console.log('Error getting Victory Screen Object', e)
+        }
       }
     },
     watch: {}
@@ -33,6 +52,7 @@
     height: 100vh;
     color: white;
     padding: 50px;
+    font-size: 36px;
   }
 
   h1 {

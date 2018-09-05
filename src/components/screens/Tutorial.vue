@@ -36,7 +36,7 @@
           const res = await bucket.getObject({ slug })
           this.tutorialContent = res.object.content
         } catch(e) {
-          console.log('Error getting Home Screen Object', e)
+          console.log('Error getting Tutorial Object', e)
         }
       }
     },
