@@ -2,7 +2,7 @@
 
 > A Vue.js project powered by Cosmic JS
 
-[Play Game](https://cosmicjs.com/apps/vue-rpg-game)
+#### [Play Game](https://cosmicjs.com/apps/vue-rpg-game)
 
 ## Enter The Cosmos
 
