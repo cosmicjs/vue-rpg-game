@@ -27,16 +27,7 @@
     props: [],
     data() { return {} },
     components: {},
-    mounted() {
-      let self = this
-      window.addEventListener('keydown', function(e) {
-        if (e.keyCode == 13) {
-          if (self && self.$store && self.$store.state.currentView == 'enemyDefeated') {
-            self.changeView('playGame')
-          }
-        }
-      });
-    },
+    mounted() {},
     computed: {
       currentHealth() {
         return this.$store.state.currentHeroHealth

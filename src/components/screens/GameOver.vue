@@ -34,8 +34,13 @@
 
   h1 {
     margin: 0;
+    padding-top: 50px;
   }
 
+  p {
+    font-family: 36px;
+  }
+  
   button {
     color: white;
     background-color: black;

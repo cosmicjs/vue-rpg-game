@@ -34,6 +34,23 @@ const api = Cosmic()
     components: {},
     mounted() {
       this.getResObject()
+      let self = this
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode == 13) {
+          if (self && self.$store) {
+            let view = self.$store.state.currentView
+            if (view == 'enemyDefeated' || view == 'storyIntro') {
+              return self.changeView('playGame')
+            }
+            if ( view == 'tutorial' || view == 'howToPlay') {
+              return self.changeView('homeScreen')
+            }
+            if (view == 'gameOver') {
+              window.location.reload(true);
+            }
+          }
+        }
+      });
     },
     computed: {
       abey() {
