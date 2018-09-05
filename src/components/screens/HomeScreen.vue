@@ -45,7 +45,7 @@ const api = Cosmic()
             if ( view == 'tutorial' || view == 'howToPlay') {
               return self.changeView('homeScreen')
             }
-            if (view == 'gameOver') {
+            if (view == 'gameOver' || view == 'victoryScreen') {
               window.location.reload(true);
             }
           }
