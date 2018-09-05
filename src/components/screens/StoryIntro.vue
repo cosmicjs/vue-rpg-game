@@ -29,12 +29,6 @@
       setTimeout(function(){
         self.showContinue = true;
       }, 4000);
-
-      window.addEventListener('keydown', function(e) {
-        if (e.keyCode == 13) {
-          self.changeView('playGame')
-        }
-      });
     },
     computed: {
       storyIntroBackground() {

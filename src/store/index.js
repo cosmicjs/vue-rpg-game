@@ -8,7 +8,7 @@ const store = new Vuex.Store({
     currentViewOptions: ['homeScreen', 'howToPlay', 'storyIntro',
                          'enemySelectionScreen', 'playGame', 'enemyDefeated'],
     currentActionMessagesFirst: 'Begin Fight',
-    currentActionMessagesSecond: 'A to Attack, H to Heal, S to Special Attack',
+    currentActionMessagesSecond: 'Press A to Attack, H to Heal, S to Special Attack',
     currentActionMessagesThird: 'Good luck!',
 
     // Hero Stats
