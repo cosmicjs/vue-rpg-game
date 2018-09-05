@@ -1,32 +1,44 @@
 <template>
   <div class="tutorial-screen">
-    <h1> How To Play: </h1>
-    <p> Enter The Cosmos is a turn based RPG.</p>
-    <p> During your turn, you can choose to attack, heal, or use a special attack.</p>
-    <p> Once you perform an action, your enemy will perform one as well!</p>
-    <br>
-    <p> Everytime you defeat an enemy, you gain some experience. Given enough experience,
-        you will level up!</p>
-    <p> Get ready to Enter The Cosmos! </p>
+    <h1> HOW TO PLAY </h1>
+    <div class="tutorial-content" v-html="tutorialContent">
 
-    <br>
+    </div>
     <!-- TODO: Add instructiosn for global keypresses -->
     <button type="button" v-on:click="changeView('homeScreen')"> Return </button>
   </div>
 </template>
 
 <script>
+  import bucket from '../../../config/config.js'
+  const Cosmic = require('cosmicjs')
+  const api = Cosmic()
 
   export default {
     props: [],
-    data() { return {} },
+    data() {
+      return {
+        tutorialContent: ''
+      }
+    },
     components: {},
-    mounted() {},
+    mounted() {
+      this.loadTutorialContent()
+    },
     computed: {},
     methods: {
       changeView(view) {
         this.$store.commit('changeView', view)
       },
+      async loadTutorialContent() {
+        const slug = 'tutorial'
+        try {
+          const res = await bucket.getObject({ slug })
+          this.tutorialContent = res.object.content
+        } catch(e) {
+          console.log('Error getting Home Screen Object', e)
+        }
+      }
     },
     watch: {}
   }
@@ -35,8 +47,8 @@
 
 <style scoped>
   .tutorial-screen {
-    background-image: url('https://cosmic-s3.imgix.net/61779d50-af9f-11e8-98c3-51c5ac510cfb-TutorialBG.gif');
-    height: 100vh;
+    background-color: black;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: #92ced6;
@@ -46,6 +58,7 @@
   .tutorial-screen h1 {
     margin: 0;
     background: black;
+    text-decoration: underline;
   }
 
   .tutorial-screen p {
@@ -59,5 +72,9 @@
     padding: 20px 40px;
     border: 1px solid #92ced6;
     color: #92ced6;
+  }
+
+  .tutorial-content {
+    font-size: 36px;
   }
 </style>
