@@ -34,6 +34,13 @@
     mounted() {
       let self = this
       window.addEventListener('keydown', function(e) {
+        if (self && self.$store) {
+          let view = self.$store.state.currentView
+          if (view != 'playGame') {
+            return
+          }
+        }
+        
         if (e.keyCode == 65) {
           self.heroAttack()
         }
