@@ -11,7 +11,7 @@ Enter The Cosmos is a game built using Vue.js and [Cosmic JS](https://cosmicjs.c
 
 https://cosmicjs.com/articles/how-to-create-an-rpg-adventure-game-using-vuejs-and-cosmic-js-jlftg080
 
-## Build Setup
+## Getting Started
 
 ``` bash
 # install dependencies
