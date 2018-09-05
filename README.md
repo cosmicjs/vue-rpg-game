@@ -1,6 +1,6 @@
-# enterthecosmos
+# Vue RPG Game
 
-> A Vue.js project
+> A Vue.js project powered by Cosmic JS
 
 ## Enter The Cosmos
 
