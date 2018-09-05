@@ -26,7 +26,17 @@
     props: [],
     data() { return {} },
     components: {},
-    mounted() {},
+    mounted() {
+      let self = this
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode == 65) {
+          self.heroAttack()
+        }
+        if (e.keyCode == 72) {
+          self.heroHeal()
+        }
+      });
+    },
     computed: {
       currentHeroState() {
         return this.$store.state.currentHeroState
@@ -45,7 +55,7 @@
         return this.heroLevel * 10
       },
       heroHealPower() {
-        return this.heroLevel * 15
+        return this.heroLevel * 20
       },
       calculateHealthBar() {
         let color

@@ -27,7 +27,14 @@
     props: [],
     data() { return {} },
     components: {},
-    mounted() {},
+    mounted() {
+      let self = this
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode == 13) {
+          self.changeView('playGame')
+        }
+      });
+    },
     computed: {
       currentHealth() {
         return this.$store.state.currentHeroHealth
