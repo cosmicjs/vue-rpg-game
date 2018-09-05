@@ -14,6 +14,9 @@ https://cosmicjs.com/articles/how-to-create-an-rpg-adventure-game-using-vuejs-an
 ## Getting Started
 
 ``` bash
+git clone https://github.com/cosmicjs/vue-rpg-game
+cd vue-rpg-game
+
 # install dependencies
 npm install
 
